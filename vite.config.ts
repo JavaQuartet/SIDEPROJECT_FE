@@ -1,4 +1,4 @@
-import {defineConfig} from 'vite';
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
@@ -6,6 +6,7 @@ export default defineConfig({
     resolve: {
         alias: {
             '@styles': '/src/assets/styles',
+            '@api': '/src/api'
         }
     },
     server: {
@@ -15,8 +16,8 @@ export default defineConfig({
                 changeOrigin: true,
                 rewrite: (path) => path.replace(/^\/api/, ''),
                 secure: false,
-                ws: true,
-            },
-        },
-    },
+                ws: true
+            }
+        }
+    }
 });
